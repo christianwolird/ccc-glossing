@@ -346,11 +346,11 @@
   },
   {
     "term": "COMMANDMENT",
-    "definition": "A norm of moral and/or religious action; above all, the Ten Commandments given by God to Moses. Jesus summarized all the commandments in the twofold command of love of God and love of neighbor (2052). COMMANDMENTS OF THE",
+    "definition": "A norm of moral and/or religious action; above all, the Ten Commandments given by God to Moses. Jesus summarized all the commandments in the twofold command of love of God and love of neighbor (2052).",
     "letter": "C"
   },
   {
-    "term": "CHURCH",
+    "term": "COMMANDMENTS OF THE CHURCH",
     "definition": "See Precepts of the Church.",
     "letter": "C"
   },
@@ -381,7 +381,7 @@
   },
   {
     "term": "CONSCIENCE",
-    "definition": "The interior voice of a human being, within whose heart the inner law of God is inscribed. Moral conscience is a judgment of practical reason about the moral quality of a human action. It moves a person at the appropriate moment to do good and to avoid evil (17771778). An examination of conscience is recommended as a preparation for the reception of the Sacrament of Penance (1454).",
+    "definition": "The interior voice of a human being, within whose heart the inner law of God is inscribed. Moral conscience is a judgment of practical reason about the moral quality of a human action. It moves a person at the appropriate moment to do good and to avoid evil. An examination of conscience is recommended as a preparation for the reception of the Sacrament of Penance (1454).",
     "letter": "C"
   },
   {
@@ -556,9 +556,14 @@
   },
   {
     "term": "ECONOMY",
-    "definition": "The structure and organization of productive work or activity in a society, forming the basis for financial support and stability of individuals, families, and society. The morality of economic activity is judged according to the seventh commandment; economic activity is one of the principal points876 addressed by the Church’s social doctrine (2426, 2430). ECONOMY OF SALVATION (DIVINE ECONOMY): From a Greek word (oikonomia, literally “management of a household” or “stewardship”) which refers to God’s revelation and communication of himself to the world in time for the sake of the salvation of all humanity; hence, the economy of salvation (258, 1066). The Fathers of the Church distinguished oikonomia from theologia; the latter term refers to the mystery of the internal life of the Trinity (236). The economy of salvation, on the other hand, refers to God’s activity in creating and governing the world, particularly with regard to his plan for the salvation of the world in the person and work of Jesus Christ, a plan which is being accomplished through his Body the Church, in its life and sacraments; hence, the “sacramental economy” (1076, 1093).",
+    "definition": "The structure and organization of productive work or activity in a society, forming the basis for financial support and stability of individuals, families, and society. The morality of economic activity is judged according to the seventh commandment; economic activity is one of the principal points addressed by the Church’s social doctrine (2426, 2430).",
+    "letter": "E"
+  },{
+    "term": "ECONOMY OF SALVATION (DIVINE ECONOMY)",
+    "definition": "From a Greek word (oikonomia, literally “management of a household” or “stewardship”) which refers to God’s revelation and communication of himself to the world in time for the sake of the salvation of all humanity; hence, the economy of salvation (258, 1066). The Fathers of the Church distinguished oikonomia from theologia; the latter term refers to the mystery of the internal life of the Trinity (236). The economy of salvation, on the other hand, refers to God’s activity in creating and governing the world, particularly with regard to his plan for the salvation of the world in the person and work of Jesus Christ, a plan which is being accomplished through his Body the Church, in its life and sacraments; hence, the “sacramental economy” (1076, 1093).",
     "letter": "E"
   },
+
   {
     "term": "ECUMENICAL COUNCIL",
     "definition": "See Council, Ecumenical.",
@@ -646,18 +651,18 @@
   },
   {
     "term": "EVE",
-    "definition": "According to the creation story in Genesis, the first woman; wife of Adam. God did not create man a solitary being; from the beginning, “male and female he created them” (Gen 1:29) (369, 375). Because she is the mother of the eternal Son of God made man, Jesus Christ the “new Adam,” Mary is called the “new Eve,” the878 “mother of the living” in the order of grace (511). See Adam.",
+    "definition": "According to the creation story in Genesis, the first woman; wife of Adam. God did not create man a solitary being; from the beginning, “male and female he created them” (Gen 1:29) (369, 375). Because she is the mother of the eternal Son of God made man, Jesus Christ the “new Adam,” Mary is called the “new Eve,” the “mother of the living” in the order of grace (511). See Adam.",
     "letter": "E"
   },
   {
     "term": "EVIL",
-    "definition": "The opposite or absence of good. One form of evil, physical evil, is a result of the “state of journeying” toward its ultimate perfection in which God created the world, involving the existence of the less perfect alongside the more perfect, the constructive and the destructive forces of nature, the appearance and disappearance of certain beings (310). Moral evil, however, results from the free choice to sin which angels and men have; it is permitted by God, who knows how to derive good from it, in order to respect the freedom of his creatures (311). The entire revelation of God’s goodness in Christ is a response to the existence of evil (309, 385, 1707). The devil is called the Evil One. See Devil/Demon. EXAMINATION OF",
+    "definition": "The opposite or absence of good. One form of evil, physical evil, is a result of the “state of journeying” toward its ultimate perfection in which God created the world, involving the existence of the less perfect alongside the more perfect, the constructive and the destructive forces of nature, the appearance and disappearance of certain beings (310). Moral evil, however, results from the free choice to sin which angels and men have; it is permitted by God, who knows how to derive good from it, in order to respect the freedom of his creatures (311). The entire revelation of God’s goodness in Christ is a response to the existence of evil (309, 385, 1707). The devil is called the Evil One. See Devil/Demon.",
     "letter": "E"
   },
   {
-    "term": "CONSCIENCE",
+    "term": "EXAMINATION OF CONSCIENCE",
     "definition": "Prayerful selfreflection on our words and deeds in the light of the Gospel to determine how we may have sinned against God. The reception of the Sacrament of Penance ought to be prepared for by such an examination of conscience (1454).",
-    "letter": "C"
+    "letter": "E"
   },
   {
     "term": "EXCOMMUNICATION",
@@ -726,7 +731,7 @@
   },
   {
     "term": "FILIOQUE",
-    "definition": "A word meaning “and (from) the Son,” added to the Latin version of the NicenoConstantinopolitan Creed, by which the Latin tradition of the Creed confesses that the Holy880 Spirit “proceeds from the Father and the Son” (246).",
+    "definition": "A word meaning “and (from) the Son,” added to the Latin version of the NicenoConstantinopolitan Creed, by which the Latin tradition of the Creed confesses that the Holy Spirit “proceeds from the Father and the Son” (246).",
     "letter": "F"
   },
   {
@@ -741,13 +746,13 @@
   },
   {
     "term": "FRUITS OF THE HOLY SPIRIT",
-    "definition": "The perfections that the Holy Spirit forms in us as the “first fruits” of eternal glory. The tradition of the Church identifies twelve fruits of the Holy Spirit (1832). GENERAL CONFESSION AND",
+    "definition": "The perfections that the Holy Spirit forms in us as the “first fruits” of eternal glory. The tradition of the Church identifies twelve fruits of the Holy Spirit (1832).",
     "letter": "F"
   },
   {
-    "term": "ABSOLUTION",
+    "term": "GENERAL CONFESSION AND ABSOLUTION",
     "definition": "A communal form of the Sacrament of Penance in which, in a case of grave necessity, a priest may give absolution to all persons present at one time, after they have made a general, but not individual, confession of their sins. For the absolution to be valid, the faithful must have the intention of individually confessing their sins in their next individual reception of the Sacrament of Penance (1483).",
-    "letter": "A"
+    "letter": "G"
   },
   {
     "term": "GENESIS",
@@ -781,7 +786,7 @@
   },
   {
     "term": "GOSPEL",
-    "definition": "The “good news” of God’s mercy and love revealed in the life, death, and resurrection of Christ. It is this Gospel or good news that the Apostles, and the Church following them, are to proclaim to the entire world (571, 1964). The Gospel is handed on in the apostolic tradition of the Church as the source of allsaving truth and moral discipline (75). The four Gospels are the books written by the evangelists Matthew, Mark, Luke, and John which have for their central object Jesus Christ, God’s incarnate Son: his life, teachings, Passion and881 glorification, and his Church’s beginnings under the Spirit’s guidance (124, 514).",
+    "definition": "The “good news” of God’s mercy and love revealed in the life, death, and resurrection of Christ. It is this Gospel or good news that the Apostles, and the Church following them, are to proclaim to the entire world (571, 1964). The Gospel is handed on in the apostolic tradition of the Church as the source of allsaving truth and moral discipline (75). The four Gospels are the books written by the evangelists Matthew, Mark, Luke, and John which have for their central object Jesus Christ, God’s incarnate Son: his life, teachings, Passion and glorification, and his Church’s beginnings under the Spirit’s guidance (124, 514).",
     "letter": "G"
   },
   {
@@ -836,12 +841,16 @@
   },
   {
     "term": "HIERARCHY OF TRUTHS",
-    "definition": "The order (hierarchy) of the truths in Catholic doctrine, insofar as they vary in their relation to the central mystery and foundation of882 Christian faith, the mystery of the Holy Trinity (90, 234).accept them as the Word of God (132, 1100, 1349).",
+    "definition": "The order (hierarchy) of the truths in Catholic doctrine, insofar as they vary in their relation to the central mystery and foundation of Christian faith, the mystery of the Holy Trinity (90, 234).",
     "letter": "H"
   },
   {
     "term": "HOLY DAYS OF OBLIGATION",
-    "definition": "Principal feast days on which, in addition to Sundays, Catholics are obliged by Church law to participate in the Eucharist; a precept of the Church (2043, 2180).HOMOSEXUALITY: Sexual attraction or orientation toward persons of the same sex and/or sexual acts between persons of the same sex. Homosexual acts are morally wrong because they violate God’s purpose for human sexual activity (2357).",
+    "definition": "Principal feast days on which, in addition to Sundays, Catholics are obliged by Church law to participate in the Eucharist; a precept of the Church (2043, 2180).",
+    "letter": "H"
+  },{
+    "term": "HOMOSEXUALITY",
+    "definition": "Sexual attraction or orientation toward persons of the same sex and/or sexual acts between persons of the same sex. Homosexual acts are morally wrong because they violate God’s purpose for human sexual activity (2357).",
     "letter": "H"
   },
   {
@@ -871,7 +880,7 @@
   },
   {
     "term": "HOMILY",
-    "definition": "Preaching by an ordained minister to explain the Scriptures proclaimed in the liturgy and to exhort the people to",
+    "definition": "Preaching by an ordained minister to explain the Scriptures proclaimed in the liturgy and to exhort the people to accept them as the Word of God (132, 1100, 1349).",
     "letter": "H"
   },
   {
@@ -1186,9 +1195,9 @@
   },
   {
     "term": "MOSES",
-    "definition": "The leader chosen by God to lead the Israelites out of their exile in Egypt. To him God revealed the divine name (Yahweh) and the law on Mount Sinai (including the Decalogue), by which he sealed the covenant with his people Israel (62, 204). As lawgiver, Moses was a type of Christ, the lawgiver of the New Law.NEW TESTAMENT: The twentyseven books of the Bible written by the sacred authors in apostolic times, which have Jesus Christ, the incarnate Son of God—his life, teachings, Passion and glorification, and the beginnings of his Church—as their central theme. The promises and mighty deeds of God in the old alliance or covenant, reported in the Old Testament, prefigure and are fulfilled in the New Covenant established by Jesus Christ, reported in the sacred writings of the New Testament (124, 128). See Bible; Covenant.",
+    "definition": "The leader chosen by God to lead the Israelites out of their exile in Egypt. To him God revealed the divine name (Yahweh) and the law on Mount Sinai (including the Decalogue), by which he sealed the covenant with his people Israel (62, 204). As lawgiver, Moses was a type of Christ, the lawgiver of the New Law.",
     "letter": "M"
-  },
+  }, 
   {
     "term": "MYSTAGOGY",
     "definition": "A liturgical catechesis which aims to initiate people into the mystery of Christ. In a more specific sense, the catechetical period following immediately after the reception of Baptism by adults (1075).",
@@ -1203,6 +1212,11 @@
     "term": "NEW COVENANT",
     "definition": "The new “dispensation,” order or Covenant, established by God in Jesus Christ, to succeed and perfect the Old Covenant (cf. 612, 839). The New Law or Law of the",
     "letter": "N"
+  },
+  {
+    "term": "NEW TESTAMENT",
+    "definition": "The twentyseven books of the Bible written by the sacred authors in apostolic times, which have Jesus Christ, the incarnate Son of God—his life, teachings, Passion and glorification, and the beginnings of his Church—as their central theme. The promises and mighty deeds of God in the old alliance or covenant, reported in the Old Testament, prefigure and are fulfilled in the New Covenant established by Jesus Christ, reported in the sacred writings of the New Testament (124, 128). See Bible; Covenant.",
+    "letter": "M"
   },
   {
     "term": "NICENE CREED",
@@ -1751,12 +1765,17 @@
   },
   {
     "term": "SON OF GOD",
-    "definition": "A title frequently applied to Jesus in the Gospel, signifying his unique relationship to the Father. The second Person900 of the Blessed Trinity is called Son of God in reference to the Eternal Father. The revelation of his divine sonship is the principal dramatic development of the story of Jesus of Nazareth (441-445).commemorates the resurrection of Christ on the first Easter Sunday, and is a reminder of the first day of creation for those who have become a “new creation in Christ” (1166, 2174, 2180).",
+    "definition": "A title frequently applied to Jesus in the Gospel, signifying his unique relationship to the Father. The second Person of the Blessed Trinity is called Son of God in reference to the Eternal Father. The revelation of his divine sonship is the principal dramatic development of the story of Jesus of Nazareth (441-445).",
     "letter": "S"
   },
   {
     "term": "SON OF MAN",
-    "definition": "The title used by our Lord of himself in the Gospel. This title connotes a relationship with the eschatological figure of the “Son of man appearing in clouds and glory” in the prophecy of Daniel (Mk 13:26; Dn 7:13) (440; cf. 661).SUPERNATURAL: Surpassing the power of created beings; a result of God’s gracious initiative. Our vocation to eternal life is supernatural (1998; cf. 1722).",
+    "definition": "The title used by our Lord of himself in the Gospel. This title connotes a relationship with the eschatological figure of the “Son of man appearing in clouds and glory” in the prophecy of Daniel (Mk 13:26; Dn 7:13) (440; cf. 661).",
+    "letter": "S"
+  },
+  {
+    "term": "SUPERNATURAL",
+    "definition": "Surpassing the power of created beings; a result of God’s gracious initiative. Our vocation to eternal life is supernatural (1998; cf. 1722).",
     "letter": "S"
   },
   {
@@ -1781,7 +1800,7 @@
   },
   {
     "term": "SUNDAY",
-    "definition": "The “Lord’s Day,” the principal day of the week for the Eucharistic celebration of the Church. Each Sunday Mass",
+    "definition": "The “Lord’s Day,” the principal day of the week for the Eucharistic celebration of the Church. Each Sunday Mass commemorates the resurrection of Christ on the first Easter Sunday, and is a reminder of the first day of creation for those who have become a “new creation in Christ” (1166, 2174, 2180).",
     "letter": "S"
   },
   {
@@ -1801,17 +1820,28 @@
   },
   {
     "term": "TEACHING OFFICE",
-    "definition": "See Magisterium.Church (27 books) (120-121, 124). See Covenant.",
+    "definition": "See Magisterium.",
     "letter": "T"
   },
   {
     "term": "TEMPERANCE",
-    "definition": "The cardinal moral virtue that moderates the attraction of pleasure and provides balance in the use of created goods. It ensures the mastery of the will over instinct, and keeps natural desires within proper limits (1809).THEOLOGY: The study of God, based on divine revelation (236, 2033, 2038).",
+    "definition": "The cardinal moral virtue that moderates the attraction of pleasure and provides balance in the use of created goods. It ensures the mastery of the will over instinct, and keeps natural desires within proper limits (1809).",
     "letter": "T"
   },
   {
+    "term": "THEOLOGY",
+    "definition": "The study of God, based on divine revelation (236, 2033, 2038).",
+    "letter": "T"
+  },
+
+  {
     "term": "TEMPLE",
-    "definition": "The house of worship built in Jerusalem by Solomon as God’s dwelling-place, for the exercise of the priestly rites of sacrifice in the Jewish religion. After the capture of Jerusalem in 70 a.d. by the Romans, the second temple was destroyed and never rebuilt. Jesus recognized the Temple as God’s dwelling, and a house of prayer; he even identified himself with the Temple by presenting himself as God’s definitive dwelling-place. The Holy Spirit makes the Church “the temple of the living God” (583, 797; cf. 2580).TIME: See Eternal Life.",
+    "definition": "The house of worship built in Jerusalem by Solomon as God’s dwelling-place, for the exercise of the priestly rites of sacrifice in the Jewish religion. After the capture of Jerusalem in 70 a.d. by the Romans, the second temple was destroyed and never rebuilt. Jesus recognized the Temple as God’s dwelling, and a house of prayer; he even identified himself with the Temple by presenting himself as God’s definitive dwelling-place. The Holy Spirit makes the Church “the temple of the living God” (583, 797; cf. 2580).",
+    "letter": "T"
+  },
+  {
+    "term": "TIME",
+    "definition": "See Eternal Life.",
     "letter": "T"
   },
   {
@@ -1821,7 +1851,7 @@
   },
   {
     "term": "TESTAMENT",
-    "definition": "The name given to the two major parts of the Bible; a synonym for “covenant,” as in Old and New Covenants. The Old Testament recounts the history of salvation before the time of Christ (46 books), and the New Testament unfolds the saving work of Jesus and the apostolic beginnings of the",
+    "definition": "The name given to the two major parts of the Bible; a synonym for “covenant,” as in Old and New Covenants. The Old Testament recounts the history of salvation before the time of Christ (46 books), and the New Testament unfolds the saving work of Jesus and the apostolic beginnings of the Church (27 books) (120-121, 124). See Covenant.",
     "letter": "T"
   },
   {
@@ -1841,7 +1871,7 @@
   },
   {
     "term": "TRANSUBSTANTIATION",
-    "definition": "The scholastic term used to designate the unique change of the Eucharistic bread and wine into the Body and Blood of Christ. “Transubstantiation” indicates that through the consecration of the bread and the wine there occurs the change of the entire902 substance of the bread into the substance of the Body of Christ, and of the entire substance of the wine into the Blood of Christ— even though the appearances or “species” of bread and wine remain (1376).",
+    "definition": "The scholastic term used to designate the unique change of the Eucharistic bread and wine into the Body and Blood of Christ. “Transubstantiation” indicates that through the consecration of the bread and the wine there occurs the change of the entire substance of the bread into the substance of the Body of Christ, and of the entire substance of the wine into the Blood of Christ— even though the appearances or “species” of bread and wine remain (1376).",
     "letter": "T"
   },
   {
@@ -1886,12 +1916,12 @@
   },
   {
     "term": "VICE",
-    "definition": "A habit acquired by repeated sin in violation of the proper norms of human morality. The vices are often linked with the seven capital sins. Repentance for sin and confession may restore grace to a soul, but the removal of the ingrained disposition to sin or903 vice requires much effort and selfdenial, until the contrary virtue is acquired (1866).to the service of the Church as the universal sacrament of salvation (cf. 873; 931).",
+    "definition": "A habit acquired by repeated sin in violation of the proper norms of human morality. The vices are often linked with the seven capital sins. Repentance for sin and confession may restore grace to a soul, but the removal of the ingrained disposition to sin or vice requires much effort and selfdenial, until the contrary virtue is acquired (1866).to the service of the Church as the universal sacrament of salvation (cf. 873; 931).",
     "letter": "V"
   },
   {
     "term": "VIRGIN BIRTH",
-    "definition": "The conception of Jesus in the womb of the Virgin Mary solely by the power of the Holy Spirit. The Church’s confession of faith in the virgin birth affirms that Jesus was conceived by the Holy Spirit without human seed (496). See Virgin Mary.VOW: A deliberate and free promise made to God, concerning a possible and better good which must be fulfilled by reason of the virtue of religion (2102). Religious vows, the public profession of the evangelical counsels in the Church, have an exemplary value in witnessing to the Kingdom to come (cf. 915).",
+    "definition": "The conception of Jesus in the womb of the Virgin Mary solely by the power of the Holy Spirit. The Church’s confession of faith in the virgin birth affirms that Jesus was conceived by the Holy Spirit without human seed (496). See Virgin Mary.",
     "letter": "V"
   },
   {
@@ -1917,6 +1947,11 @@
   {
     "term": "VOCATION",
     "definition": "The calling or destiny we have in this life and hereafter. God has created the human person to love and serve him; the fulfillment of this vocation is eternal happiness (1, 358, 1700). Christ calls the faithful to the perfection of holiness (825). The vocation of the laity consists in seeking the Kingdom of God by engaging in temporal affairs and directing them according to God’s will (898). Priestly and religious vocations are dedicated",
+    "letter": "V"
+  },
+  {
+    "term": "VOW",
+    "definition": "A deliberate and free promise made to God, concerning a possible and better good which must be fulfilled by reason of the virtue of religion (2102). Religious vows, the public profession of the evangelical counsels in the Church, have an exemplary value in witnessing to the Kingdom to come (cf. 915).",
     "letter": "V"
   },
   {

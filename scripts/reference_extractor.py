@@ -1,292 +1,269 @@
 import json
 import re
 from pathlib import Path
-from typing import Dict, List, Set
+from collections import defaultdict
 
 
-SEE_ONLY_RE = re.compile(r'^\s*See\s+(.+?)\.\s*$', re.IGNORECASE)
-INLINE_SEE_RE = re.compile(r'\bSee\s+([^.]*)\.', re.IGNORECASE)
+INPUT = Path("data/clean/glossary.json")
+OUTPUT = Path("references.json")
 
-BAD_SINGLE_WORD_TERMS = {
-    "A", "AN", "AND", "AS", "AT", "BY", "FOR", "FROM", "IN", "INTO",
-    "OF", "ON", "OR", "THE", "TO", "WITH"
+
+SEE_RE = re.compile(r"\bSee\s+([^.]*)\.", re.IGNORECASE)
+
+
+STOPWORDS = {
+    "a", "an", "and", "as", "at", "by", "for", "from", "in", "into",
+    "of", "on", "or", "the", "to", "with", "without", "through",
+    "that", "this", "these", "those", "their", "his", "her", "its",
+    "is", "are", "was", "were", "be", "been", "being"
 }
-
-
-def clean_term(term: str) -> str:
-    term = term.strip()
-    term = term.replace("’", "'")
-    term = re.sub(r"\s+", " ", term)
-
-    # Strip punctuation from the ends only
-    term = re.sub(r"^[^A-Z0-9'/(),;.\-]+", "", term)
-    term = re.sub(r"[^A-Z0-9'/(),;.\-]+$", "", term)
-
-    # Additional cleanup for dangling punctuation
-    term = re.sub(r"^[,.;:)\]]+", "", term)
-    term = re.sub(r"[,.;:(\[]+$", "", term)
-
-    return term.strip()
 
 
 def normalize_text(text: str) -> str:
     text = text.lower()
     text = text.replace("’", "'")
+    text = text.replace("“", '"').replace("”", '"')
+    text = text.replace("—", " ").replace("–", " ").replace("-", " ")
     text = re.sub(r"[^a-z0-9' ]+", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
 
-def canonicalize_phrase(phrase: str) -> str:
-    phrase = phrase.strip()
-    phrase = re.sub(r"[.]+$", "", phrase)
-    phrase = phrase.replace("’", "'")
-    phrase = re.sub(r"\s+", " ", phrase)
-    return clean_term(phrase.upper())
+def canonical_term(term: str) -> str:
+    return re.sub(r"\s+", " ", term.strip().upper())
 
 
-def is_valid_term(term: str) -> bool:
-    if not term:
-        return False
-
-    if not re.search(r"[A-Z]", term):
-        return False
-
-    if " " not in term and "/" not in term and term in BAD_SINGLE_WORD_TERMS:
-        return False
-
-    return True
+def clean_definition(defn: str) -> str:
+    return re.sub(r"\s+", " ", defn.strip())
 
 
-def load_and_clean_entries(path: Path) -> List[dict]:
-    raw_entries = json.loads(path.read_text(encoding="utf-8"))
-
-    cleaned = []
-    seen_terms = set()
-
-    for entry in raw_entries:
-        term = clean_term(entry["term"])
-        definition = entry["definition"].strip()
-
-        if not is_valid_term(term):
-            continue
-
-        if term in seen_terms:
-            continue
-        seen_terms.add(term)
-
-        cleaned.append({
-            "term": term,
-            "definition": definition,
-            "letter": entry.get("letter")
-        })
-
-    return cleaned
-
-
-def term_variants(term: str) -> List[str]:
-    """
-    Variants used for matching a glossary term in running text.
-
-    Examples:
-      "HOLY SPIRIT" -> ["holy spirit", maybe pluralized if relevant]
-      "EPISCOPAL/EPISCOPATE" -> ["episcopal", "episcopate"]
-      "PSALM" -> ["psalm", "psalms"]
-    """
-    pieces = [p.strip() for p in term.split("/") if p.strip()]
-    variants = []
-
-    if len(pieces) >= 2:
-        for piece in pieces:
-            variants.extend(simple_plural_variants_phrase(piece))
+def simple_plural_forms(word: str) -> set[str]:
+    forms = {word}
+    if word.endswith("y") and len(word) >= 2 and word[-2] not in "aeiou":
+        forms.add(word[:-1] + "ies")
+    elif word.endswith(("s", "x", "z", "ch", "sh")):
+        forms.add(word + "es")
     else:
-        variants.extend(simple_plural_variants_phrase(term))
+        forms.add(word + "s")
 
-    # deduplicate while preserving longest-first-ish behavior
-    out = []
+    if word.endswith("ies") and len(word) >= 4:
+        forms.add(word[:-3] + "y")
+    if word.endswith("es"):
+        base = word[:-2]
+        if base.endswith(("s", "x", "z", "ch", "sh")):
+            forms.add(base)
+    if word.endswith("s") and not word.endswith("ss"):
+        forms.add(word[:-1])
+
+    return {f for f in forms if f}
+
+
+def token_family(word: str) -> set[str]:
+    """
+    Conservative derivational family generator.
+    This is intentionally small. Better to miss a few than hallucinate many.
+    """
+    out = set(simple_plural_forms(word))
+
+    # adverb / adjective / noun-ish families
+    if word.endswith("ice"):
+        stem = word[:-3]   # justice -> just
+        if stem:
+            out.add(stem)
+            out.add(stem + "ly")
+            out.add("un" + stem)
+            out.add("un" + stem + "ly")
+
+    if word.endswith("ity"):
+        stem = word[:-3]
+        if stem:
+            out.add(stem)
+
+    if word.endswith("ion"):
+        stem = word[:-3]
+        if stem:
+            out.add(stem)
+
+    return {x for x in out if x and x not in STOPWORDS}
+
+
+# High-value semantic aliases / triggers.
+# This is the part that fixes "Jesus" -> "JESUS CHRIST", etc.
+MANUAL_TRIGGERS = {
+    "JESUS CHRIST": {"jesus", "jesus'"},
+    "GOD": {"god's"},
+    "VIRGIN MARY": {"mary"},
+    "JUSTICE": {"just", "justly", "unjust", "unjustly"},
+    "SALVATION": {"save", "saves", "saving", "saved"},
+    "CHRISTMAS": {"nativity"},
+    "EUCHARIST": {"communion"},  # optional; comment out if too aggressive
+    "LITURGY": {"liturgical"},
+    "HEAVEN": {"heavenly"},
+    "LAW, MORAL": {"morally"},
+    "REVELATION": {"revealed truth"},
+}
+
+
+def split_see_targets(chunk: str) -> list[str]:
+    """
+    Semicolons separate targets. Commas may belong to a headword.
+    """
+    chunk = chunk.strip()
+    if not chunk:
+        return []
+
+    # First try whole chunk
+    parts = [chunk]
+
+    # Then semicolon-split alternatives
+    if ";" in chunk:
+        parts.extend([p.strip() for p in chunk.split(";") if p.strip()])
+
+    # Deduplicate preserving order
     seen = set()
-    for v in sorted(set(variants), key=lambda s: (-len(s), s)):
-        if v not in seen:
-            out.append(v)
-            seen.add(v)
+    out = []
+    for p in parts:
+        p2 = canonical_term(p.rstrip("."))
+        if p2 not in seen:
+            seen.add(p2)
+            out.append(p2)
     return out
 
 
-def simple_plural_variants_phrase(phrase: str) -> List[str]:
-    """
-    Generate conservative singular/plural surface variants for a phrase.
-
-    We only inflect the last word of the phrase.
-    Example:
-      "capital sins" -> ["capital sins"]
-      "psalm" -> ["psalm", "psalms"]
-      "church" -> ["church", "churches"]
-      "charity" -> ["charity", "charities"]
-    """
-    phrase = normalize_text(phrase)
-    if not phrase:
-        return []
-
-    words = phrase.split()
-    last = words[-1]
-
-    variants = {phrase}
-
-    def replace_last(new_last: str):
-        variants.add(" ".join(words[:-1] + [new_last]))
-
-    # plural rules
-    if last.endswith("y") and len(last) >= 2 and last[-2] not in "aeiou":
-        replace_last(last[:-1] + "ies")
-    elif last.endswith(("s", "x", "z", "ch", "sh")):
-        replace_last(last + "es")
-    else:
-        replace_last(last + "s")
-
-    # singular rules, if the term itself is plural-looking
-    if last.endswith("ies") and len(last) >= 4:
-        replace_last(last[:-3] + "y")
-    elif last.endswith("es") and (
-        last[:-2].endswith(("s", "x", "z", "ch", "sh"))
-    ):
-        replace_last(last[:-2])
-    elif last.endswith("s") and not last.endswith("ss"):
-        replace_last(last[:-1])
-
-    return sorted(variants, key=lambda s: (-len(s), s))
-
-
-def extract_inline_see_targets(definition: str, candidate_terms: Set[str]) -> Set[str]:
-    """
-    Extract explicit references from clauses like:
-      'See Bible; Covenant.'
-    """
+def extract_see_refs(defn: str, term_set: set[str]) -> set[str]:
     refs = set()
-
-    for m in INLINE_SEE_RE.finditer(definition):
+    for m in SEE_RE.finditer(defn):
         chunk = m.group(1)
+        for cand in split_see_targets(chunk):
+            if cand in term_set:
+                refs.add(cand)
+    return refs
 
-        # Split on semicolons/commas
-        pieces = re.split(r"[;,]", chunk)
-        for piece in pieces:
-            candidate = canonicalize_phrase(piece)
-            if candidate in candidate_terms:
-                refs.add(candidate)
+
+def strip_see_clauses(defn: str) -> str:
+    return SEE_RE.sub(" ", defn)
+
+
+def build_surface_map(terms: list[str]) -> dict[str, set[str]]:
+    """
+    term -> set of normalized surface triggers
+    """
+    surfaces = {}
+
+    for term in terms:
+        term_norm = normalize_text(term)
+        triggers = {term_norm}
+
+        # Comma-reordered aliases
+        if "," in term:
+            parts = [p.strip() for p in term.split(",")]
+            if len(parts) == 2 and all(parts):
+                triggers.add(normalize_text(f"{parts[1]} {parts[0]}"))
+
+        # Slash-variants
+        if "/" in term:
+            slash_parts = [p.strip() for p in term.split("/") if p.strip()]
+            for p in slash_parts:
+                triggers.add(normalize_text(p))
+
+        # Phrase headword expansions: inflect the last word conservatively
+        words = term_norm.split()
+        if words:
+            base_last = words[-1]
+            for form in token_family(base_last):
+                phrase = " ".join(words[:-1] + [form])
+                triggers.add(phrase)
+
+        # Single-word terms get token families directly
+        if len(words) == 1:
+            for form in token_family(words[0]):
+                triggers.add(form)
+
+        # Manual semantic triggers
+        triggers.update(MANUAL_TRIGGERS.get(term, set()))
+
+        surfaces[term] = {t for t in triggers if t}
+
+    return surfaces
+
+
+def dedupe_entries(raw_entries: list[dict]) -> list[dict]:
+    """
+    Keep the longest definition per term. This helps with parser-split duplicates.
+    """
+    best = {}
+    for entry in raw_entries:
+        term = canonical_term(entry["term"])
+        defn = clean_definition(entry["definition"])
+        if not term:
+            continue
+        if term not in best or len(defn) > len(best[term]["definition"]):
+            best[term] = {"term": term, "definition": defn}
+    return list(best.values())
+
+
+def find_text_refs(defn: str, source_term: str, surfaces: dict[str, set[str]]) -> set[str]:
+    refs = set()
+    norm_def = normalize_text(defn)
+
+    # longest triggers first, to reduce smaller substring noise
+    candidates = []
+    for term, trigset in surfaces.items():
+        if term == source_term:
+            continue
+        best_len = max(len(t) for t in trigset)
+        candidates.append((term, trigset, best_len))
+    candidates.sort(key=lambda x: (-x[2], x[0]))
+
+    occupied = [False] * len(norm_def)
+
+    for term, trigset, _ in candidates:
+        matched = False
+        for trig in sorted(trigset, key=lambda s: (-len(s), s)):
+            pattern = re.compile(rf"(?<![a-z0-9']){re.escape(trig)}(?![a-z0-9'])")
+            for m in pattern.finditer(norm_def):
+                a, b = m.span()
+                if any(occupied[i] for i in range(a, b)):
+                    continue
+                for i in range(a, b):
+                    occupied[i] = True
+                refs.add(term)
+                matched = True
+                break
+            if matched:
+                break
 
     return refs
 
 
-def remove_inline_see_clause_text(definition: str) -> str:
-    """
-    Remove 'See X; Y.' clauses before free-text term matching,
-    so those explicit references are not double-counted.
-    """
-    definition = INLINE_SEE_RE.sub(" ", definition)
-    definition = re.sub(r"\s+", " ", definition).strip()
-    return definition
+def build_reference_graph(entries: list[dict]) -> dict[str, list[str]]:
+    term_set = {e["term"] for e in entries}
+    surfaces = build_surface_map(sorted(term_set))
 
-
-def find_non_overlapping_references(
-    definition: str,
-    source_term: str,
-    candidate_terms: Set[str]
-) -> List[str]:
-    """
-    Find references to glossary terms in a definition.
-
-    Longest matches win first, so OLD TESTAMENT wins over TESTAMENT
-    on the same span.
-
-    Slash terms like EPISCOPAL/EPISCOPATE match on either variant.
-    """
-    norm_def = normalize_text(definition)
-
-    term_infos = []
-    for term in candidate_terms:
-        if term == source_term:
-            continue
-        variants = term_variants(term)
-        if not variants:
-            continue
-        max_len = max(len(v) for v in variants)
-        term_infos.append((term, variants, max_len))
-
-    # Longest first
-    term_infos.sort(key=lambda x: (-x[2], x[0]))
-
-    occupied = [False] * len(norm_def)
-    found = []
-
-    for term, variants, _ in term_infos:
-        matched_this_term = False
-
-        for variant in sorted(variants, key=lambda v: (-len(v), v)):
-            pattern = re.compile(rf"(?<![a-z0-9']){re.escape(variant)}(?![a-z0-9'])")
-
-            for match in pattern.finditer(norm_def):
-                start, end = match.span()
-
-                if any(occupied[i] for i in range(start, end)):
-                    continue
-
-                for i in range(start, end):
-                    occupied[i] = True
-
-                found.append(term)
-                matched_this_term = True
-                break
-
-            if matched_this_term:
-                break
-
-    return sorted(found)
-
-
-def build_reference_dictionary(entries: List[dict]) -> Dict[str, List[str]]:
-    """
-    Every entry becomes a node/key.
-
-    References are the union of:
-      1. explicit See-targets
-      2. glossary terms mentioned in the non-See explanatory text
-    """
-    all_terms = {entry["term"] for entry in entries}
-    ref_dict: Dict[str, List[str]] = {}
-
+    graph = {}
     for entry in entries:
-        source_term = entry["term"]
-        original_definition = entry["definition"]
+        term = entry["term"]
+        defn = entry["definition"]
 
-        explicit_refs = extract_inline_see_targets(original_definition, all_terms)
+        see_refs = extract_see_refs(defn, term_set)
+        main_text = strip_see_clauses(defn)
+        text_refs = find_text_refs(main_text, term, surfaces)
 
-        main_definition = remove_inline_see_clause_text(original_definition)
-        text_refs = set(find_non_overlapping_references(
-            definition=main_definition,
-            source_term=source_term,
-            candidate_terms=all_terms
-        ))
+        refs = sorted((see_refs | text_refs) - {term})
+        graph[term] = refs
 
-        refs = sorted((explicit_refs | text_refs) - {source_term})
-        ref_dict[source_term] = refs
-
-    return dict(sorted(ref_dict.items()))
+    return dict(sorted(graph.items()))
 
 
 def main():
-    input_path = Path("data/clean/glossary.json")
-    output_path = Path("references.json")
+    raw_entries = json.loads(INPUT.read_text(encoding="utf-8"))
+    entries = dedupe_entries(raw_entries)
+    graph = build_reference_graph(entries)
 
-    entries = load_and_clean_entries(input_path)
-    ref_dict = build_reference_dictionary(entries)
-
-    output_path.write_text(
-        json.dumps(ref_dict, indent=2, ensure_ascii=False),
-        encoding="utf-8",
+    OUTPUT.write_text(
+        json.dumps(graph, indent=2, ensure_ascii=False),
+        encoding="utf-8"
     )
-
-    print(f"Wrote {len(ref_dict)} entries to {output_path}")
-    print()
-    print(json.dumps(ref_dict, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
