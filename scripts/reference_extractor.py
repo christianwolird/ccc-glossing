@@ -89,30 +89,71 @@ def term_variants(term: str) -> List[str]:
     Variants used for matching a glossary term in running text.
 
     Examples:
-      "HOLY SPIRIT" -> ["holy spirit"]
+      "HOLY SPIRIT" -> ["holy spirit", maybe pluralized if relevant]
       "EPISCOPAL/EPISCOPATE" -> ["episcopal", "episcopate"]
+      "PSALM" -> ["psalm", "psalms"]
     """
     pieces = [p.strip() for p in term.split("/") if p.strip()]
     variants = []
 
     if len(pieces) >= 2:
         for piece in pieces:
-            norm = normalize_text(piece)
-            if norm:
-                variants.append(norm)
+            variants.extend(simple_plural_variants_phrase(piece))
     else:
-        norm = normalize_text(term)
-        if norm:
-            variants.append(norm)
+        variants.extend(simple_plural_variants_phrase(term))
 
-    # Deduplicate while preserving order
+    # deduplicate while preserving longest-first-ish behavior
     out = []
     seen = set()
-    for v in variants:
+    for v in sorted(set(variants), key=lambda s: (-len(s), s)):
         if v not in seen:
             out.append(v)
             seen.add(v)
     return out
+
+
+def simple_plural_variants_phrase(phrase: str) -> List[str]:
+    """
+    Generate conservative singular/plural surface variants for a phrase.
+
+    We only inflect the last word of the phrase.
+    Example:
+      "capital sins" -> ["capital sins"]
+      "psalm" -> ["psalm", "psalms"]
+      "church" -> ["church", "churches"]
+      "charity" -> ["charity", "charities"]
+    """
+    phrase = normalize_text(phrase)
+    if not phrase:
+        return []
+
+    words = phrase.split()
+    last = words[-1]
+
+    variants = {phrase}
+
+    def replace_last(new_last: str):
+        variants.add(" ".join(words[:-1] + [new_last]))
+
+    # plural rules
+    if last.endswith("y") and len(last) >= 2 and last[-2] not in "aeiou":
+        replace_last(last[:-1] + "ies")
+    elif last.endswith(("s", "x", "z", "ch", "sh")):
+        replace_last(last + "es")
+    else:
+        replace_last(last + "s")
+
+    # singular rules, if the term itself is plural-looking
+    if last.endswith("ies") and len(last) >= 4:
+        replace_last(last[:-3] + "y")
+    elif last.endswith("es") and (
+        last[:-2].endswith(("s", "x", "z", "ch", "sh"))
+    ):
+        replace_last(last[:-2])
+    elif last.endswith("s") and not last.endswith("ss"):
+        replace_last(last[:-1])
+
+    return sorted(variants, key=lambda s: (-len(s), s))
 
 
 def extract_inline_see_targets(definition: str, candidate_terms: Set[str]) -> Set[str]:

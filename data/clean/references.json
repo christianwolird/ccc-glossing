@@ -30,7 +30,8 @@
   ],
   "ACOLYTE": [
     "BLESSING",
-    "MINISTRY"
+    "MINISTRY",
+    "RITES"
   ],
   "ADAM": [
     "CHRIST",
@@ -77,10 +78,14 @@
     "HEAVEN",
     "LORD",
     "MASS",
-    "SACRIFICE"
+    "SACRAMENTALS",
+    "SACRIFICE",
+    "SIN"
   ],
   "AMEN": [
+    "CREED",
     "LITURGY",
+    "PRAYER",
     "TESTAMENT"
   ],
   "ANALOGY OF FAITH": [
@@ -120,12 +125,15 @@
     "BAPTISM",
     "CHRISMATION",
     "CHRIST",
+    "CHURCH",
     "CONFIRMATION",
     "HOLY ORDERS",
     "HOLY SPIRIT",
     "MESSIAH",
     "OLD TESTAMENT",
     "RITES",
+    "SACRAMENT",
+    "SACRAMENTALS",
     "SPIRIT"
   ],
   "ANOINTING OF THE SICK": [
@@ -133,7 +141,8 @@
     "CHRISTIAN",
     "GRACE",
     "PRAYER",
-    "SACRAMENT"
+    "SACRAMENT",
+    "SIN"
   ],
   "ANTICHRIST": [
     "GOD",
@@ -147,7 +156,9 @@
   ],
   "APOSTLE": [
     "APOSTOLIC SUCCESSION",
+    "BISHOP",
     "CHURCH",
+    "DISCIPLE",
     "GOSPEL",
     "HOLY ORDERS",
     "MISSION",
@@ -155,6 +166,7 @@
     "WORLD"
   ],
   "APOSTLES' CREED": [
+    "APOSTLE",
     "CHRISTIAN",
     "CHURCH",
     "CREED",
@@ -168,12 +180,15 @@
     "WORLD"
   ],
   "APOSTOLIC SUCCESSION": [
+    "APOSTLE",
+    "BISHOP",
     "CHURCH"
   ],
   "APPARITION": [
     "ANGEL",
     "ASCENSION",
     "CHRIST",
+    "DISCIPLE",
     "EASTER",
     "HEAVEN",
     "MARY",
@@ -205,13 +220,14 @@
     "HOLY SPIRIT",
     "JUSTIFICATION",
     "LIFE",
+    "RITES",
     "SACRAMENT",
     "SIN",
     "SPIRIT",
     "TRINITY"
   ],
   "BEATIFIC VISION": [
-    "BEATITUDE",
+    "BEATITUDES",
     "CONTEMPLATION",
     "GOD",
     "HAPPINESS",
@@ -243,6 +259,7 @@
     "HOLY SPIRIT"
   ],
   "BISHOP": [
+    "APOSTLE",
     "EPISCOPAL/EPISCOPATE",
     "HOLY ORDERS",
     "PARTICULAR CHURCH",
@@ -267,6 +284,7 @@
     "CHRIST",
     "CHURCH",
     "COMMUNION",
+    "DISCIPLE",
     "EUCHARIST",
     "HEAVEN",
     "JESUS CHRIST",
@@ -275,7 +293,9 @@
     "SON OF GOD",
     "SOUL"
   ],
-  "CALUMNY": [],
+  "CALUMNY": [
+    "JUDGMENT"
+  ],
   "CANON LAW": [
     "CHURCH",
     "EASTERN CHURCHES"
@@ -304,18 +324,23 @@
     "ENVY",
     "GLUTTONY",
     "PRIDE",
-    "SLOTH"
+    "SIN",
+    "SLOTH",
+    "VICE"
   ],
   "CARDINAL VIRTUES": [
     "FAITH",
     "FORTITUDE",
     "JUSTICE",
+    "PASSION",
     "PRUDENCE",
-    "TEMPERANCE"
+    "TEMPERANCE",
+    "VIRTUE"
   ],
   "CATECHESIS": [
     "CHRISTIAN",
     "CHURCH",
+    "DISCIPLE",
     "DOCTRINE/DOGMA",
     "FAITH",
     "JESUS CHRIST",
@@ -348,6 +373,7 @@
     "SALVATION"
   ],
   "CATHOLIC CHURCH": [
+    "APOSTLE",
     "APOSTOLIC SUCCESSION",
     "CHRIST",
     "CHURCH",
@@ -355,9 +381,11 @@
     "FAITH",
     "LIFE",
     "MINISTRY",
+    "SACRAMENTALS",
     "SALVATION"
   ],
   "CELIBACY": [
+    "BISHOP",
     "CHURCH",
     "EASTERN CHURCHES",
     "GOD",
@@ -369,7 +397,8 @@
     "CHRIST",
     "CHURCH",
     "CONFIRMATION",
-    "HOLY ORDERS"
+    "HOLY ORDERS",
+    "SACRAMENT"
   ],
   "CHARISM": [
     "CHRISTIAN",
@@ -384,6 +413,7 @@
     "VIRTUE"
   ],
   "CHASTITY": [
+    "CARDINAL VIRTUES",
     "FRUITS OF THE HOLY SPIRIT",
     "TEMPERANCE",
     "VIRTUE"
@@ -395,7 +425,8 @@
     "CONFIRMATION",
     "CONSECRATION",
     "HOLY ORDERS",
-    "HOLY SPIRIT"
+    "HOLY SPIRIT",
+    "SACRAMENT"
   ],
   "CHRISMATION": [
     "ANOINTING",
@@ -415,6 +446,7 @@
     "BAPTISM",
     "CHRIST",
     "CHURCH",
+    "DISCIPLE",
     "HOLY SPIRIT"
   ],
   "CHRISTMAS": [],
@@ -434,9 +466,12 @@
     "CHRISTIAN",
     "COVENANT",
     "GOD",
-    "ISRAEL"
+    "ISRAEL",
+    "RITES"
   ],
   "COLLEGIALITY": [
+    "APOSTLE",
+    "BISHOP",
     "CHRIST",
     "CHURCH",
     "POPE"
@@ -448,6 +483,7 @@
   ],
   "COMMUNION": [
     "CHRIST",
+    "CHRISTIAN",
     "CHURCH",
     "EUCHARIST",
     "VOCATION"
@@ -458,7 +494,8 @@
     "CHRIST",
     "COMMUNION",
     "EUCHARIST",
-    "FAITH"
+    "FAITH",
+    "SAINT"
   ],
   "CONCUPISCENCE": [
     "BAPTISM",
@@ -467,7 +504,8 @@
   ],
   "CONFESSION": [
     "PENANCE",
-    "SACRAMENT"
+    "SACRAMENT",
+    "SIN"
   ],
   "CONFIRMATION": [
     "BAPTISM",
@@ -477,6 +515,7 @@
     "GIFTS OF THE HOLY SPIRIT",
     "GRACE",
     "LIFE",
+    "SACRAMENT",
     "WORSHIP"
   ],
   "CONSCIENCE": [
@@ -497,7 +536,8 @@
   ],
   "CONSECRATED VIRGINS": [
     "HEAVEN",
-    "LORD"
+    "LORD",
+    "RITES"
   ],
   "CONSECRATION": [
     "BLESSING",
@@ -538,6 +578,7 @@
     "SIN"
   ],
   "COUNCIL, ECUMENICAL": [
+    "BISHOP",
     "CHURCH",
     "ECUMENICAL COUNCIL",
     "POPE",
@@ -559,15 +600,18 @@
     "LORD",
     "MOSES",
     "OLD TESTAMENT",
+    "PROPHET",
     "REVELATION",
     "SALVATION",
     "TESTAMENT"
   ],
   "COVETOUSNESS": [
-    "CAPITAL SINS"
+    "CAPITAL SINS",
+    "COMMANDMENT"
   ],
   "CREATION": [
-    "GOD"
+    "GOD",
+    "HEAVEN"
   ],
   "CREED": [
     "APOSTLES' CREED",
@@ -577,10 +621,13 @@
   ],
   "CROSS": [
     "AMEN",
+    "CATHOLIC",
     "CHRIST",
+    "DISCIPLE",
     "GOD",
     "HOLY SPIRIT",
     "MEDIATOR/MEDIATRIX",
+    "PRAYER",
     "SACRIFICE",
     "SIGN OF THE CROSS"
   ],
@@ -588,12 +635,14 @@
     "BISHOP",
     "BLESSING",
     "CHARITY",
+    "CHURCH",
     "COMMUNION",
     "DIACONATE",
     "EUCHARIST",
     "GOSPEL",
     "HIERARCHY",
     "HOLY ORDERS",
+    "MARRIAGE",
     "MINISTRY",
     "PRIESTHOOD",
     "SACRAMENT"
@@ -617,6 +666,7 @@
     "DEVIL/DEMON"
   ],
   "DEPOSIT OF FAITH": [
+    "APOSTLE",
     "CHURCH",
     "FAITH",
     "MAGISTERIUM",
@@ -628,13 +678,17 @@
     "GOSPEL",
     "SAVIOR",
     "SIN",
-    "SOUL"
+    "SOUL",
+    "SPIRIT"
   ],
   "DESPAIR": [
     "HOPE",
-    "SALVATION"
+    "SALVATION",
+    "SIN"
   ],
-  "DETRACTION": [],
+  "DETRACTION": [
+    "SIN"
+  ],
   "DEVELOPMENT, DOCTRINAL": [
     "CONTEMPLATION",
     "MAGISTERIUM",
@@ -642,6 +696,7 @@
   ],
   "DEVIL/DEMON": [
     "ANGEL",
+    "DEMON",
     "EVIL",
     "GOD",
     "SATAN"
@@ -654,7 +709,9 @@
     "EASTERN CHURCHES",
     "EPARCHY",
     "FAITH",
-    "PARTICULAR CHURCH"
+    "PARTICULAR CHURCH",
+    "RITES",
+    "SACRAMENT"
   ],
   "DISCIPLE": [
     "LIFE",
@@ -687,20 +744,25 @@
   ],
   "EASTER": [
     "BAPTISM",
+    "CATECHUMEN",
     "CHRISTIAN",
     "CONFIRMATION",
     "EUCHARIST",
     "HOLY WEEK",
     "LENT",
+    "SACRAMENT",
     "SUNDAY"
   ],
   "EASTERN CHURCHES": [
     "CHRIST",
     "CHURCH",
-    "RITES"
+    "PARTICULAR CHURCH",
+    "RITES",
+    "TRADITION"
   ],
   "ECCLESIASTIC/ECCLESIASTICAL": [
-    "CHURCH"
+    "CHURCH",
+    "DIOCESE"
   ],
   "ECONOMY": [
     "CHURCH",
@@ -712,6 +774,8 @@
     "MORALITY",
     "OIKONOMIA",
     "REVELATION",
+    "SACRAMENT",
+    "SACRAMENTALS",
     "SALVATION",
     "TRINITY",
     "WORLD"
@@ -720,6 +784,7 @@
   "ECUMENISM": [
     "CATHOLIC CHURCH",
     "CHRIST",
+    "CHRISTIAN",
     "CHURCH",
     "HOLY SPIRIT"
   ],
@@ -758,7 +823,8 @@
   "EPISCOPAL/EPISCOPATE": [
     "BISHOP",
     "CONSECRATION",
-    "ORDINATION"
+    "ORDINATION",
+    "SACRAMENTALS"
   ],
   "EREMITICAL LIFE": [
     "GOD",
@@ -786,7 +852,8 @@
     "HAPPINESS",
     "HEAVEN",
     "JESUS CHRIST",
-    "LIFE"
+    "LIFE",
+    "SOUL"
   ],
   "EUCHARIST": [
     "CHRIST",
@@ -796,6 +863,8 @@
     "GOD",
     "LIFE",
     "MASS",
+    "SACRAMENT",
+    "SACRAMENTALS",
     "SACRIFICE",
     "SUNDAY"
   ],
@@ -812,13 +881,16 @@
     "CHRISTIAN",
     "CHURCH",
     "CONSECRATED LIFE",
+    "COUNSEL",
+    "DISCIPLE",
     "LIFE",
     "OBEDIENCE",
     "POVERTY"
   ],
   "EVANGELIST": [
     "CHRISTIAN",
-    "FAITH"
+    "FAITH",
+    "GOSPEL"
   ],
   "EVANGELIZATION": [
     "CHRIST",
@@ -836,6 +908,7 @@
     "SON OF GOD"
   ],
   "EVIL": [
+    "ANGEL",
     "CHRIST",
     "DEVIL/DEMON",
     "GOD",
@@ -849,9 +922,11 @@
     "ECCLESIASTIC/ECCLESIASTICAL",
     "EUCHARIST",
     "MINISTRY",
-    "RELIGION"
+    "RELIGION",
+    "SACRAMENT"
   ],
   "EXODUS": [
+    "CHRISTIAN",
     "COVENANT",
     "EUCHARIST",
     "JESUS CHRIST",
@@ -892,6 +967,7 @@
     "GRACE",
     "PRAYER",
     "REVELATION",
+    "SACRAMENT",
     "VIRTUE"
   ],
   "FAITHFUL, THE CHRISTIAN": [
@@ -903,6 +979,7 @@
     "PEOPLE OF GOD"
   ],
   "FALL": [
+    "ANGEL",
     "CHURCH",
     "GENESIS",
     "GOD",
@@ -934,7 +1011,8 @@
     "EASTER",
     "GOD",
     "LIFE",
-    "MARY"
+    "MARY",
+    "SAINT"
   ],
   "FILIOQUE": [
     "CREED",
@@ -946,7 +1024,8 @@
     "GOD"
   ],
   "FORTITUDE": [
-    "GIFTS OF THE HOLY SPIRIT"
+    "GIFTS OF THE HOLY SPIRIT",
+    "VIRTUE"
   ],
   "FRUITS OF THE HOLY SPIRIT": [
     "CHURCH",
@@ -990,7 +1069,9 @@
     "LIFE"
   ],
   "GOSPEL": [
+    "APOSTLE",
     "CHURCH",
+    "EVANGELIST",
     "JESUS CHRIST",
     "LIFE",
     "LOVE",
@@ -1008,11 +1089,13 @@
     "OLD COVENANT"
   ],
   "GRACE": [
+    "CHARISM",
     "CHRISTIAN",
     "GIFTS OF THE HOLY SPIRIT",
     "GOD",
     "LIFE",
     "LOVE",
+    "SACRAMENTALS",
     "SANCTIFYING GRACE",
     "SOUL",
     "VOCATION"
@@ -1026,11 +1109,12 @@
     "GOD",
     "INTERCESSION",
     "MARY",
+    "PRAISE",
     "PRAYER",
     "REDEEMER/REDEMPTION"
   ],
   "HAPPINESS": [
-    "BEATITUDE",
+    "BEATITUDES",
     "GOD",
     "LOVE",
     "NATURE",
@@ -1068,6 +1152,8 @@
     "WORLD"
   ],
   "HIERARCHY": [
+    "APOSTLE",
+    "BISHOP",
     "CHRIST",
     "CHURCH"
   ],
@@ -1081,9 +1167,11 @@
     "WORD OF GOD"
   ],
   "HOLY DAYS OF OBLIGATION": [
+    "CATHOLIC",
     "CHURCH",
     "EUCHARIST",
-    "FEAST DAYS"
+    "FEAST DAYS",
+    "SUNDAY"
   ],
   "HOLY ORDERS": [
     "ORDERS, HOLY"
@@ -1105,11 +1193,13 @@
     "TRINITY"
   ],
   "HOLY WATER": [
-    "BAPTISM"
+    "BAPTISM",
+    "SACRAMENTALS"
   ],
   "HOLY WEEK": [
     "EASTER",
     "EASTERN CHURCHES",
+    "LITURGY",
     "PASSION",
     "SUNDAY"
   ],
@@ -1137,6 +1227,7 @@
   ],
   "HYPOSTATIC UNION": [
     "JESUS CHRIST",
+    "NATURE",
     "SON OF GOD"
   ],
   "ICON": [
@@ -1159,6 +1250,7 @@
     "GRACE",
     "JESUS CHRIST",
     "MARY",
+    "MERIT",
     "ORIGINAL SIN",
     "TRADITION",
     "VIRTUE"
@@ -1186,6 +1278,7 @@
     "CHURCH",
     "GOD",
     "REDEEMER/REDEMPTION",
+    "SAINT",
     "SIN"
   ],
   "INERRANCY": [
@@ -1193,10 +1286,12 @@
     "SALVATION"
   ],
   "INFALLIBILITY": [
+    "BISHOP",
     "CHURCH",
     "DOCTRINE/DOGMA",
     "FAITH",
     "HOLY SPIRIT",
+    "PASTOR/PASTORAL OFFICE",
     "POPE"
   ],
   "INITIATION, CHRISTIAN": [
@@ -1206,7 +1301,8 @@
     "CONFIRMATION",
     "EUCHARIST",
     "LIFE",
-    "RITES"
+    "RITES",
+    "SACRAMENT"
   ],
   "INSPIRATION": [
     "BIBLICAL INSPIRATION"
@@ -1233,6 +1329,7 @@
   ],
   "INTERCOMMUNION": [
     "CATHOLIC CHURCH",
+    "CHRISTIAN",
     "COMMUNION",
     "EUCHARIST"
   ],
@@ -1293,6 +1390,7 @@
     "SIN"
   ],
   "KINGDOM OF GOD (OF HEAVEN)": [
+    "APOSTLE",
     "CHRIST",
     "CHURCH",
     "EUCHARIST",
@@ -1317,16 +1415,19 @@
   ],
   "LAST SUPPER": [
     "CHURCH",
+    "DISCIPLE",
     "EUCHARIST",
     "PASSOVER"
   ],
   "LATIN RITE": [
     "CHURCH",
     "LITURGY",
-    "RITES"
+    "RITES",
+    "TRADITION"
   ],
   "LAW, MORAL": [
     "CHRIST",
+    "COMMANDMENT",
     "EVIL",
     "GOD",
     "GOSPEL",
@@ -1377,6 +1478,7 @@
   "LORD'S PRAYER": [
     "CHRISTIAN",
     "CHURCH",
+    "DISCIPLE",
     "OUR FATHER",
     "PRAYER"
   ],
@@ -1387,6 +1489,7 @@
     "SAVIOR"
   ],
   "MAGISTERIUM": [
+    "APOSTLE",
     "CHURCH",
     "FAITH",
     "TEACHING OFFICE",
@@ -1408,7 +1511,8 @@
     "BAPTISM",
     "CHRIST",
     "FAITH",
-    "RESURRECTION OF CHRIST"
+    "RESURRECTION OF CHRIST",
+    "SIN"
   ],
   "MARY": [
     "CHRISTIAN",
@@ -1429,6 +1533,7 @@
     "LAST SUPPER",
     "MISSION",
     "RESURRECTION OF CHRIST",
+    "SACRAMENTALS",
     "SACRIFICE",
     "SALVATION"
   ],
@@ -1469,16 +1574,19 @@
     "JESUS CHRIST"
   ],
   "MINISTRY": [
+    "BISHOP",
     "CHRIST",
     "CHURCH",
     "HOLY ORDERS",
     "LAITY",
+    "SACRAMENT",
     "TESTAMENT"
   ],
   "MIRACLE": [
     "NATURE"
   ],
   "MISSION": [
+    "APOSTLE",
     "CHRIST",
     "CHRISTIAN",
     "CHURCH",
@@ -1553,18 +1661,21 @@
     "OLD COVENANT"
   ],
   "NICENE CREED": [
+    "CHURCH",
     "CREED",
+    "ECUMENICAL COUNCIL",
     "PROFESSION OF FAITH"
   ],
   "NUPTIAL BLESSING": [
-    "BLESSING"
+    "BLESSING",
+    "PRAYER"
   ],
   "OBEDIENCE": [
     "CHRIST",
     "CHURCH",
     "COMMANDMENT",
     "CONSECRATED LIFE",
-    "COUNSEL",
+    "EVANGELICAL COUNSELS",
     "FAITH",
     "GOD",
     "GRACE",
@@ -1595,12 +1706,14 @@
     "WORLD"
   ],
   "ORDERS, HOLY": [
+    "APOSTLE",
     "BISHOP",
     "CHRIST",
     "CHURCH",
     "MINISTRY",
     "MISSION",
-    "SACRAMENT"
+    "SACRAMENT",
+    "SACRAMENTALS"
   ],
   "ORDERS, RELIGIOUS": [
     "CONSECRATED LIFE"
@@ -1612,6 +1725,7 @@
     "CONSECRATION",
     "HOLY ORDERS",
     "PRAYER",
+    "RITES",
     "SACRAMENT"
   ],
   "ORIGINAL SIN": [
@@ -1630,11 +1744,13 @@
     "BAPTISM",
     "CATHOLIC",
     "CATHOLIC CHURCH",
+    "CHRISTIAN",
     "CHURCH",
     "COMMUNION",
     "CREED",
     "EASTERN CHURCHES",
     "PRIESTHOOD",
+    "SACRAMENT",
     "SCHISM"
   ],
   "OUR FATHER": [
@@ -1656,6 +1772,7 @@
     "GOD"
   ],
   "PARACLETE": [
+    "DISCIPLE",
     "HOLY SPIRIT",
     "MISSION",
     "SPIRIT",
@@ -1692,6 +1809,7 @@
     "GOD",
     "PASSOVER",
     "REDEEMER/REDEMPTION",
+    "SIN",
     "TESTAMENT",
     "WORLD"
   ],
@@ -1710,8 +1828,10 @@
     "PASCH/PASCHAL LAMB"
   ],
   "PASTOR/PASTORAL OFFICE": [
+    "BISHOP",
     "CHRIST",
     "MINISTRY",
+    "PARISH",
     "POPE"
   ],
   "PATRIARCH": [
@@ -1719,6 +1839,8 @@
     "BISHOP",
     "CHURCH",
     "HIERARCHY",
+    "PARTICULAR CHURCH",
+    "RITES",
     "TRADITION"
   ],
   "PATRISTIC": [
@@ -1756,7 +1878,8 @@
     "PENITENT/PENITENTIAL",
     "PRAYER",
     "REPARATION",
-    "SACRAMENT"
+    "SACRAMENT",
+    "SIN"
   ],
   "PENITENT/PENITENTIAL": [
     "CHURCH",
@@ -1789,7 +1912,9 @@
     "MISSION",
     "OLD TESTAMENT"
   ],
-  "PERJURY": [],
+  "PERJURY": [
+    "COMMANDMENT"
+  ],
   "PERSON, DIVINE": [
     "GOD",
     "HOLY SPIRIT",
@@ -1802,6 +1927,7 @@
     "SPIRIT"
   ],
   "PETER, SAINT": [
+    "APOSTLE",
     "BISHOP",
     "CHRIST",
     "CHURCH",
@@ -1857,11 +1983,13 @@
   ],
   "PRECEPTS OF THE CHURCH": [
     "CHURCH",
+    "COMMANDMENT",
     "GOD",
     "LOVE",
     "PRAYER"
   ],
   "PRESBYTER": [
+    "BISHOP",
     "CHRIST",
     "CHURCH",
     "CROSS",
@@ -1880,6 +2008,7 @@
     "MARY",
     "MASS",
     "MESSIAH",
+    "RITES",
     "TEMPLE"
   ],
   "PRESUMPTION": [
@@ -1926,6 +2055,7 @@
     "REVELATION"
   ],
   "PROFESSION OF FAITH": [
+    "CHRISTIAN",
     "CREED",
     "FAITH"
   ],
@@ -1965,10 +2095,13 @@
   ],
   "PSALM": [
     "CHURCH",
+    "HYMN",
     "OLD TESTAMENT",
     "PRAYER"
   ],
-  "PSALTER": [],
+  "PSALTER": [
+    "PSALM"
+  ],
   "PUNISHMENT, ETERNAL": [
     "COMMUNION",
     "GOD",
@@ -2004,6 +2137,7 @@
     "GOD",
     "MERCY",
     "PENANCE",
+    "SACRAMENTALS",
     "SIN"
   ],
   "REDEEMER/REDEMPTION": [
@@ -2022,6 +2156,7 @@
     "CONSECRATED LIFE"
   ],
   "REMISSION OF SINS": [
+    "APOSTLE",
     "BAPTISM",
     "CHRIST",
     "CHURCH",
@@ -2029,7 +2164,8 @@
     "FAITH",
     "PENANCE",
     "SACRAMENT",
-    "SACRIFICE"
+    "SACRIFICE",
+    "SIN"
   ],
   "REPARATION": [
     "CROSS",
@@ -2064,7 +2200,10 @@
   ],
   "RITES": [
     "CATHOLIC",
-    "FAITH"
+    "FAITH",
+    "LATIN RITE",
+    "SACRAMENTALS",
+    "TRADITION"
   ],
   "ROSARY": [
     "CHURCH",
@@ -2102,7 +2241,9 @@
     "PENANCE"
   ],
   "SACRAMENTALS": [
-    "CHURCH"
+    "CHURCH",
+    "PRAYER",
+    "SACRAMENT"
   ],
   "SACRED HEART": [
     "LOVE"
@@ -2115,12 +2256,14 @@
     "LIFE",
     "LITURGY",
     "PASSION",
-    "REDEEMER/REDEMPTION"
+    "REDEEMER/REDEMPTION",
+    "SACRAMENT"
   ],
   "SACRILEGE": [
     "COMMANDMENT",
     "EUCHARIST",
-    "GOD"
+    "GOD",
+    "SACRAMENT"
   ],
   "SAINT": [
     "CANONIZATION",
@@ -2133,7 +2276,8 @@
     "LIFE"
   ],
   "SALVATION": [
-    "GOD"
+    "GOD",
+    "SIN"
   ],
   "SANCTIFYING GRACE": [
     "GRACE",
@@ -2175,12 +2319,14 @@
     "COMMUNION"
   ],
   "SCRIPTURE, SACRED": [
-    "BIBLE"
+    "BIBLE",
+    "TESTAMENT"
   ],
   "SEAL OF CONFESSION": [
     "PENANCE",
     "PENITENT/PENITENTIAL",
-    "SACRAMENT"
+    "SACRAMENT",
+    "SACRAMENTALS"
   ],
   "SECOND COMING OF CHRIST": [
     "PAROUSIA"
@@ -2205,7 +2351,8 @@
   ],
   "SIN": [
     "CONSCIENCE",
-    "GOD"
+    "GOD",
+    "VENIAL SIN"
   ],
   "SLANDER": [
     "CALUMNY"
@@ -2224,6 +2371,7 @@
   "SOCIAL TEACHING": [
     "CHURCH",
     "DOCTRINE/DOGMA",
+    "JUDGMENT",
     "JUSTICE",
     "PEACE",
     "REVELATION"
@@ -2307,6 +2455,7 @@
     "WORSHIP"
   ],
   "TEMPTATION": [
+    "COMMANDMENT",
     "DEVIL/DEMON",
     "GOD",
     "LIFE",
@@ -2316,6 +2465,7 @@
     "BIBLE",
     "CHRIST",
     "COVENANT",
+    "NEW COVENANT",
     "OLD TESTAMENT",
     "SALVATION"
   ],
@@ -2325,6 +2475,7 @@
     "REVELATION"
   ],
   "TRADITION": [
+    "APOSTLE",
     "APOSTOLIC SUCCESSION",
     "BIBLE",
     "CHURCH",
@@ -2366,14 +2517,18 @@
   ],
   "VENERATION (OF SAINTS)": [
     "ADORATION",
+    "APOSTLE",
     "CANONIZATION",
     "CHRIST",
     "FAITH",
     "GOD",
     "JESUS CHRIST",
     "LIFE",
+    "MARTYR",
     "MARY",
     "PRAYER",
+    "SAINT",
+    "VIRTUE",
     "WORSHIP"
   ],
   "VENIAL SIN": [
@@ -2388,9 +2543,13 @@
     "COMMUNION",
     "EUCHARIST",
     "PENANCE",
+    "SACRAMENT",
     "WORLD"
   ],
-  "VICAR OF CHRIST": [],
+  "VICAR OF CHRIST": [
+    "APOSTLE",
+    "POPE"
+  ],
   "VICE": [
     "CAPITAL SINS",
     "CHURCH",
@@ -2427,7 +2586,9 @@
     "ETERNAL LIFE",
     "FAITH",
     "GOD",
-    "HOPE"
+    "HOPE",
+    "SOUL",
+    "VIRTUE"
   ],
   "VISION, BEATIFIC": [
     "BEATIFIC VISION"
