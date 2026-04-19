@@ -30,6 +30,7 @@
   ],
   "ACOLYTE": [
     "BLESSING",
+    "DEACON, DIACONATE",
     "LITURGY",
     "MINISTRY",
     "RITES"
@@ -1709,6 +1710,7 @@
     "BISHOP",
     "CHRIST",
     "CHURCH",
+    "DEACON, DIACONATE",
     "HOLY ORDERS",
     "LAITY",
     "NEW TESTAMENT",
@@ -1858,6 +1860,7 @@
     "CHARACTER, SACRAMENTAL",
     "CHRIST",
     "CHURCH",
+    "DEACON, DIACONATE",
     "MINISTRY",
     "MISSION",
     "SACRAMENT"
@@ -1871,6 +1874,7 @@
     "CHRIST",
     "CHURCH",
     "CONSECRATION",
+    "DEACON, DIACONATE",
     "HOLY ORDERS",
     "PRAYER",
     "RITES",

@@ -101,6 +101,8 @@ MANUAL_TRIGGERS = {
     "HEAVEN": {"heavenly"},
     "LAW, MORAL": {"morally"},
     "REVELATION": {"revealed truth"},
+    "DEACON, DIACONATE": {"deacon", "deacons"},
+    "DIACONATE": {"deacon", "deacons"},
 }
 
 

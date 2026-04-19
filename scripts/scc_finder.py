@@ -90,6 +90,11 @@ def main():
 
     # collect nontrivial SCCs
     nontrivial = [(i, comp) for i, comp in enumerate(sccs) if len(comp) >= 2]
+    trivial = [comp for i, comp in enumerate(sccs) if len(comp) == 1]
+
+    num_trivial = len(sccs)-len(nontrivial)
+    print(f"Total trivial SCCs: {num_trivial}")
+    print(trivial)
 
     # assign new labels 1..k
     id_map = {old_i: new_i+1 for new_i, (old_i, _) in enumerate(nontrivial)}
@@ -98,6 +103,7 @@ def main():
     print("NONTRIVIAL SCCs\n")
     for new_i, (old_i, comp) in enumerate(nontrivial, start=1):
         print(f"{new_i}: {comp}")
+        print(f"Size = {len(comp)}")
 
     print("\nEDGES BETWEEN NONTRIVIAL SCCs\n")
 
