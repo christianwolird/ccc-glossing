@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+from collections import defaultdict, deque
+
+PAIR_TEXT = r"""
 ABRAHAM <-> PATRIARCH
 ABRAHAM <-> COVENANT
 ABSOLUTION <-> PENANCE, SACRAMENT OF
@@ -140,3 +145,92 @@ RELIGION <-> WORSHIP
 REPARATION <-> SATISFACTION (FOR SIN)
 SIN <-> VENIAL SIN
 VIRTUE <-> VIRTUES, THEOLOGICAL
+""".strip()
+
+
+def parse_edges(text: str) -> list[tuple[str, str]]:
+    edges = []
+    for lineno, raw_line in enumerate(text.splitlines(), start=1):
+        line = raw_line.strip()
+        if not line:
+            continue
+        if "<->" not in line:
+            raise ValueError(f"Line {lineno} is missing '<->': {raw_line!r}")
+        left, right = line.split("<->", maxsplit=1)
+        u = left.strip()
+        v = right.strip()
+        if not u or not v:
+            raise ValueError(f"Line {lineno} has an empty endpoint: {raw_line!r}")
+        edges.append((u, v))
+    return edges
+
+
+def build_graph(edges: list[tuple[str, str]]) -> dict[str, set[str]]:
+    graph: dict[str, set[str]] = defaultdict(set)
+    for u, v in edges:
+        graph[u].add(v)
+        graph[v].add(u)
+    return graph
+
+
+def connected_components(graph: dict[str, set[str]]) -> list[set[str]]:
+    seen: set[str] = set()
+    components: list[set[str]] = []
+
+    for start in graph:
+        if start in seen:
+            continue
+
+        comp: set[str] = set()
+        queue = deque([start])
+        seen.add(start)
+
+        while queue:
+            u = queue.popleft()
+            comp.add(u)
+            for v in graph[u]:
+                if v not in seen:
+                    seen.add(v)
+                    queue.append(v)
+
+        components.append(comp)
+
+    return components
+
+
+def component_edges(
+    component: set[str],
+    edges: list[tuple[str, str]],
+) -> list[tuple[str, str]]:
+    out = []
+    for u, v in edges:
+        if u in component and v in component:
+            a, b = sorted((u, v))
+            out.append((a, b))
+    return sorted(set(out))
+
+
+def main() -> None:
+    edges = parse_edges(PAIR_TEXT)
+    graph = build_graph(edges)
+    components = connected_components(graph)
+
+    largest = max(components, key=len)
+    largest_edges = component_edges(largest, edges)
+
+    print(f"Number of vertices in graph: {len(graph)}")
+    print(f"Number of edges in graph: {len(edges)}")
+    print(f"Number of connected components: {len(components)}")
+    print()
+    print(f"Largest component size: {len(largest)}")
+    print("Vertices:")
+    for vertex in sorted(largest):
+        print(f"  {vertex}")
+    print()
+    print(f"Edges in largest component: {len(largest_edges)}")
+    for u, v in largest_edges:
+        print(f"  {u} <-> {v}")
+
+
+if __name__ == "__main__":
+    main()
