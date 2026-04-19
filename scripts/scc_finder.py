@@ -90,7 +90,7 @@ def main():
 
     # collect nontrivial SCCs
     nontrivial = [(i, comp) for i, comp in enumerate(sccs) if len(comp) >= 2]
-    trivial = [comp for i, comp in enumerate(sccs) if len(comp) == 1]
+    trivial = [comp[0] for i, comp in enumerate(sccs) if len(comp) == 1]
 
     num_trivial = len(sccs)-len(nontrivial)
     print(f"Total trivial SCCs: {num_trivial}")
